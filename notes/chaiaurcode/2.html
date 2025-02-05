@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+    <script>
+          const func = function(){
+            console.log("sayhitesh");
+            
+          }
+        //    setTimeout(function(){
+        //      console.log("sumit");
+        //    },2000);
+         //settimeout = performs a task once after a set interval
+        //    setInterval(function(){
+        //     console.log("interval");
+            
+        //    },2000)
+        
+
+        //SET TIME OUT BY USING REFERENCE TO THE FUNCTION
+        //setTimeout(func,2000);
+        const time = setTimeout(function(){
+            document.querySelector('h1').innerHTML="BEST JS SERIES"
+        },2000)
+        //TO STOP THE TIMEOUT CLEARTIMEOUT IS USED AND IT REQUIRES REFERENCE TO THE TIMEOUT
+       // clearTimeout(stoptimeout)//clears the callback queue
+       //now to set the cleartimeout on some event
+       document.querySelector('#stop').
+       addEventListener('click',function(){
+        clearTimeout(time);
+        console.log("cleared");
+        
+       },false);
+        </script>
+</body>
+
+</html>
+<!-- the query selector selects the element on which event has to be recorded 
+and addEventListener tells what to do once the event is recorded  -->

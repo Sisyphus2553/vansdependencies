@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""  ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl clicked")
+    // }
+    //event listener can respond to various events such as mouse or keyboard click
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("owl clicked again")//the function specifes what to do once the event is encounterd
+
+    // },false)//'click' is an event
+    //event propogation and event bubbling/event capturing is implemented by using false
+    // document.getElementById('owl').addEventListener('click',function(e){//e is event object
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+
+    // },true)//'click' is an event
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("image clicked ")
+    //     //to stop propogation
+    //     e.stopPropagation()
+        
+    // },true)//'click' is an event 
+    // //bubbling = inside se outside  
+    // //capturing  = outside se inside
+    // document.getElementById('google').addEventListener(
+    //     'click',function(e){
+    //         e.preventDefault();
+    //         console.log("google clicked");
+            
+    //     },false)
+
+
+    //DISSAPEAR IMAGE WHEN CLICKED
+    document.querySelector('#images').addEventListener
+    ('click',function(e){
+       console.log(e.target.parentNode);//target gives element targetted on click and parent node gives the html element in which its located
+       if(e.target.tagName==='IMG'){//if the list is clicked the whole list gets deleted so to prevent it
+       let removeit  = e.target.parentNode//if parent node is not added then the bullet points will remain 
+       removeit.remove()//remove() removes the element 
+       //removechild removes the child element
+       //such as <li> <h1></h1> </li> h1 will be removed
+       //removeit.parentNode.removeChild(removeit);//remove child takes the parameter of the item to be removed
+       }
+    },false)
+</script>
+</html>
+
+
+
+//getElementById only selects through id
+//querySelector can get element by id class attribute etc

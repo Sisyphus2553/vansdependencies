@@ -1,0 +1,31 @@
+<!-- API is a talking language between backend and frontend -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: red;">
+  <script>
+    const requestUrl = 'https:/api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();//creating an object which will access the api
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange=function(){//monitors the changes in the states and performs some function each time the state changes
+        console.log(xhr.readyState);
+        
+    }
+    console.log(xhr.readyState);//status code
+    if(xhr.readyState===4){
+        console.log(this.responseText);
+        console.log(data);
+        
+        
+    }
+    
+    xhr.send()
+  </script>  
+
+</body>
+</html>
+<!-- v8 engine runs Javascript and it provide console.log -->
